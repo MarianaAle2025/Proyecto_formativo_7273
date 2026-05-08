@@ -1,0 +1,5 @@
+/.sonar
+/vendor
+/node_modules
+*.zip
+*.exe
