@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Permisos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Poppins';
+background:#020617;
+color:white;
+}
+
+/* SIDEBAR */
+.sidebar{
+width:220px;
+height:100vh;
+background:#0f172a;
+position:fixed;
+padding:20px;
+}
+
+.sidebar h2{color:#a78bfa;}
+
+.sidebar ul{padding:0;}
+
+.sidebar li{
+list-style:none;
+margin:15px 0;
+}
+
+.sidebar a{
+text-decoration:none;
+color:white;
+display:block;
+transition:0.3s;
+}
+
+.sidebar a:hover{
+color:#22d3ee;
+}
+
+/* MAIN */
+.main{
+margin-left:240px;
+padding:30px;
+}
+
+/* CARD */
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+/* INPUTS */
+input, select{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:8px;
+border:none;
+outline:none;
+}
+
+/* BOTÓN */
+.btn{
+background:linear-gradient(45deg,#8b5cf6,#22d3ee);
+padding:12px;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+margin-top:15px;
+}
+
+/* TABLA */
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+background:#1e293b;
+border-radius:10px;
+overflow:hidden;
+}
+
+td,th{
+padding:12px;
+border:1px solid #333;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+<h2>ConectaWork</h2>
+
+<a href="jornada.html" class="btn">
+🚀 Inicio de jornada
+</a>
+
+<ul>
+<li><a href="novedades.html">📢 Novedades</a></li>
+<li><a href="permisos.html" style="color:#22d3ee;">📄 Permisos</a></li>
+<li><a href="inasistencias.html">🚫 Inasistencias</a></li>
+<li><a href="capacitaciones.html">🎓 Capacitaciones</a></li>
+<li><a href="dashboard.html">🏠 Volver al dashboard</a></li>
+</ul>
+</div>
+
+<div class="main">
+
+<h1>📄 Gestión de Permisos</h1>
+
+<!-- FORMULARIO -->
+<div class="card">
+<h3>Solicitar permiso</h3>
+
+<form>
+<label>Tipo de permiso</label>
+<select>
+<option>Personal</option>
+<option>Médico</option>
+<option>Vacaciones</option>
+</select>
+
+<label>Fecha</label>
+<input type="date">
+
+<label>Motivo</label>
+<input type="text" placeholder="Escribe el motivo">
+
+<button class="btn">Enviar solicitud</button>
+</form>
+</div>
+
+<!-- HISTORIAL -->
+<div class="card">
+<h3>Historial de permisos</h3>
+
+<table>
+<tr>
+<th>Tipo</th>
+<th>Fecha</th>
+<th>Estado</th>
+</tr>
+
+<tr>
+<td>Médico</td>
+<td>05/05/2026</td>
+<td>Aprobado</td>
+</tr>
+
+<tr>
+<td>Personal</td>
+<td>01/05/2026</td>
+<td>Pendiente</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</body>
+</html>
