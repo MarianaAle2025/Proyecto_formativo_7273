@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Capacitaciones</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Poppins';
+background:#020617;
+color:white;
+}
+
+/* SIDEBAR */
+.sidebar{
+width:220px;
+height:100vh;
+background:#0f172a;
+position:fixed;
+padding:20px;
+}
+
+.sidebar h2{color:#a78bfa;}
+
+.sidebar ul{padding:0;}
+
+.sidebar li{
+list-style:none;
+margin:15px 0;
+}
+
+.sidebar a{
+text-decoration:none;
+color:white;
+display:block;
+transition:0.3s;
+}
+
+.sidebar a:hover{
+color:#22d3ee;
+}
+
+/* MAIN */
+.main{
+margin-left:240px;
+padding:30px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+/* CARD */
+.card{
+background:#1e293b;
+padding:15px;
+border-radius:15px;
+transition:0.3s;
+text-align:center;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+/* BOTÓN */
+.btn{
+background:linear-gradient(45deg,#8b5cf6,#22d3ee);
+padding:10px;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+<h2>ConectaWork</h2>
+
+<a href="jornada.html" class="btn">
+🚀 Inicio de jornada
+</a>
+
+<ul>
+<li><a href="novedades.html">📢 Novedades</a></li>
+<li><a href="permisos.html">📄 Permisos</a></li>
+<li><a href="inasistencias.html">🚫 Inasistencias</a></li>
+<li><a href="capacitaciones.html" style="color:#22d3ee;">🎓 Capacitaciones</a></li>
+<li><a href="dashboard.html">🏠 Volver al dashboard</a></li>
+</ul>
+</div>
+
+<div class="main">
+
+<h1>🎓 Capacitaciones</h1>
+
+<!-- CURSOS -->
+<h2>Cursos disponibles</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+<h3>Trabajo en equipo</h3>
+<button class="btn">Inscribirme</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<h3>Programación básica</h3>
+<button class="btn">Inscribirme</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+<h3>Seguridad laboral</h3>
+<button class="btn">Inscribirme</button>
+</div>
+
+</div>
+
+<!-- MIS CURSOS -->
+<h2>Mis cursos</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Comunicación efectiva</h3>
+<p>Progreso: 80%</p>
+</div>
+
+<div class="card">
+<h3>Liderazgo</h3>
+<p>Progreso: 50%</p>
+</div>
+
+</div>
+
+<!-- CERTIFICADOS -->
+<h2>Certificados</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Curso de trabajo remoto</h3>
+<button class="btn">Descargar</button>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
