@@ -25,9 +25,7 @@ padding:20px;
 
 .sidebar h2{color:#a78bfa;}
 
-.sidebar ul{
-padding:0;
-}
+.sidebar ul{padding:0;}
 
 .sidebar li{
 list-style:none;
@@ -45,20 +43,16 @@ transition:0.3s;
 color:#22d3ee;
 }
 
-/* BOTÓN GLASS */
 .btn-inicio{
 margin-top:20px;
 padding:12px;
 text-align:center;
 border-radius:12px;
 background: rgba(255,255,255,0.1);
-backdrop-filter: blur(10px);
-border:1px solid rgba(255,255,255,0.2);
 color:white;
-cursor:pointer;
-transition:0.3s;
-text-decoration:none;
 display:block;
+text-decoration:none;
+transition:0.3s;
 }
 
 .btn-inicio:hover{
@@ -80,25 +74,12 @@ background:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?aut
 display:flex;
 align-items:end;
 padding:20px;
-margin-bottom:20px;
-box-shadow:0 0 20px rgba(0,0,0,0.5);
 }
 
 .banner h1{
 background:rgba(0,0,0,0.6);
 padding:10px;
 border-radius:10px;
-}
-
-/* BOTÓN NORMAL */
-.btn{
-background:linear-gradient(45deg,#8b5cf6,#22d3ee);
-padding:10px;
-border:none;
-color:white;
-border-radius:8px;
-cursor:pointer;
-margin-top:10px;
 }
 
 /* CARDS */
@@ -124,52 +105,75 @@ transform:scale(1.05);
 .card img{
 width:100%;
 border-radius:10px;
-margin-bottom:10px;
 }
 
-/* TABLA */
-table{
-width:100%;
-margin-top:20px;
-border-collapse:collapse;
-background:#1e293b;
-border-radius:10px;
-overflow:hidden;
+.btn{
+background:linear-gradient(45deg,#8b5cf6,#22d3ee);
+padding:10px;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+margin-top:10px;
 }
 
-td,th{
-padding:12px;
-border:1px solid #333;
+/* USUARIO */
+.usuario-box{
+margin-top:10px;
+color:#22d3ee;
+font-size:14px;
+}
+
+/* SMALL BADGE */
+.modulo{
+margin-top:10px;
+font-size:12px;
+color:#94a3b8;
 }
 </style>
+
+<!-- 🔐 PROTECCIÓN -->
+<script>
+if(localStorage.getItem("login") !== "true"){
+    window.location.href = "index.html";
+}
+</script>
+
 </head>
 
 <body>
 
 <div class="sidebar">
+
 <h2>ConectaWork</h2>
 
-<!-- BOTÓN INICIO (AHORA CON LINK) -->
-<a href="jornada.html" class="btn-inicio">
-🚀 Inicio de jornada
-</a>
+<div class="usuario-box" id="usuarioBox"></div>
+<div class="modulo" id="moduloBox"></div>
+
+<a href="jornada.html" class="btn-inicio">🚀 Inicio de jornada</a>
 
 <ul>
 <li><a href="novedades.html">📢 Novedades</a></li>
 <li><a href="permisos.html">📄 Permisos</a></li>
 <li><a href="inasistencias.html">🚫 Inasistencias</a></li>
 <li><a href="capacitaciones.html">🎓 Capacitaciones</a></li>
+
+<!-- 👥 EMPLEADOS -->
+<li>
+<a href="empleados.html" onclick="guardarModulo('empleados')">👥 Empleados</a>
+</li>
+
+<li><a href="#" onclick="logout()">🚪 Cerrar sesión</a></li>
 </ul>
+
 </div>
 
 <div class="main">
 
-<!-- BANNER -->
 <div class="banner">
-<h1>Bienvenido a tu espacio de trabajo 💻</h1>
+<h1 id="bienvenida"></h1>
 </div>
 
-<!-- CARDS -->
 <div class="cards">
 
 <div class="card">
@@ -213,6 +217,39 @@ Agregar
 </table>
 
 </div>
+
+<!-- 🔥 JS -->
+<script>
+
+const usuario = localStorage.getItem("usuario");
+
+document.getElementById("bienvenida").innerText =
+"Bienvenido " + usuario + " 💻";
+
+document.getElementById("usuarioBox").innerText =
+"Usuario: " + usuario;
+
+// mostrar último módulo visitado
+const ultimo = localStorage.getItem("ultimoModulo");
+
+if(ultimo){
+document.getElementById("moduloBox").innerText =
+"Último módulo: " + ultimo;
+}
+
+// guardar módulo
+function guardarModulo(modulo){
+localStorage.setItem("ultimoModulo", modulo);
+}
+
+// logout
+function logout(){
+localStorage.removeItem("login");
+localStorage.removeItem("usuario");
+window.location.href = "index.html";
+}
+
+</script>
 
 </body>
 </html>
